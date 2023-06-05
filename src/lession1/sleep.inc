@@ -30,6 +30,14 @@ sleep_3:
 	DEC		r21					; One clock cycle;
 	BRNE	sleep_1				; Two clock cycles when jumping to Delay1, 1 clock when continuing to RET;
 
+LDD r21, Z+8
+STD Z+10, r21
+LDD r21, Z+9
+STD Z+11, r21
+LDD r21, Z+7
+STD Z+9, r21
+
+
 POP r31
 POP r30
 POP r27
@@ -37,5 +45,7 @@ POP r26
 POP r23
 POP r22
 POP r21
+POP r21
+POP r21
 
-	RET
+RET
